@@ -1,13 +1,22 @@
 package com.github.jconcurr;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class JConcurrClientApplication {
+public class JConcurrClientApplication implements CommandLineRunner {
 
-	public static void main(String[] args) {
-		SpringApplication.run(JConcurrClientApplication.class, args);
-	}
+    private static final Logger logger = LoggerFactory.getLogger(JConcurrClientApplication.class);
 
+    public static void main(String[] args) {
+        SpringApplication.run(JConcurrClientApplication.class, args);
+    }
+
+    @Override
+    public void run(String... args) throws Exception {
+        logger.info("hello!");
+    }
 }
